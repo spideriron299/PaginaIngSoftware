@@ -31,7 +31,7 @@
             <nav>
                 <a href="index.html">Tienda</a>
                 <a href="nosotros.html">Nosotros</a>
-                <a href="Precios.html"> Precios</a>
+                <a href="Ubicacion.html"> Ubicacion</a>
             </nav>
 
 
@@ -55,55 +55,9 @@
                             <p class="producto-nombre">Sueter Navideño</p>
                             <p class="producto-precio">$250</p>
                             <a aria-label="Ordenar" href="https://wa.me/5521362728?text=Hola, me interesa el Suéter Navideño de $250 :)"> <img alt="Chat on WhatsApp" src="/IMG/Boton-de-Whatsapp.png" width="80"/> </a>
-                            <div id="smart-button-container">
-                                <div style="text-align: center;">
-                                  <div id="paypal-button-container"></div>
-                                </div>
-                            </div>
-                            <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=MXN" data-sdk-integration-source="button-factory"></script>
-                            <script>
-                              function initPayPalButton() {
-                                paypal.Buttons({
-                                  style: {
-                                    shape: 'pill',
-                                    color: 'gold',
-                                    layout: 'vertical',
-                                    label: 'paypal',
-                                    
-                                  },
-                          
-                                  createOrder: function(data, actions) {
-                                    return actions.order.create({
-                                      purchase_units: [{"amount":{"currency_code":"MXN","value":1,"breakdown":{"item_total":{"currency_code":"MXN","value":1},"shipping":{"currency_code":"MXN","value":0},"tax_total":{"currency_code":"MXN","value":0}}}}]
-                                    });
-                                  },
-                          
-                                  onApprove: function(data, actions) {
-                                    return actions.order.capture().then(function(orderData) {
-                                      
-                                      // Full available details
-                                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                          
-                                      // Show a success message within this page, e.g.
-                                      const element = document.getElementById('paypal-button-container');
-                                      element.innerHTML = '';
-                                      element.innerHTML = '<h3>Thank you for your payment!</h3>';
-                          
-                                      // Or go to another URL:  actions.redirect('thank_you.html');
-                                      
-                                    });
-                                  },
-                          
-                                  onError: function(err) {
-                                    console.log(err);
-                                  }
-                                }).render('#paypal-button-container');
-                              }
-                              initPayPalButton();
-                            </script>
                         </div>
 
-                        
+
 
 
                     </div>
@@ -120,52 +74,7 @@
                             <p class="producto-nombre">Dúo de Suéter</p>
                             <p class="producto-precio">$450</p>
                             <a aria-label="Ordenar" href="https://wa.me/5521362728?text=Hola, me interesa el Dúo de Suéter de $450 :)"> <img alt="Chat on WhatsApp" src="/IMG/Boton-de-Whatsapp.png" width="80"/> </a>
-                            <div id="smart-button-container">
-                                <div style="text-align: center;">
-                                  <div id="paypal-button-container"></div>
-                                </div>
-                              </div>
-                            <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=MXN" data-sdk-integration-source="button-factory"></script>
-                            <script>
-                              function initPayPalButton() {
-                                paypal.Buttons({
-                                  style: {
-                                    shape: 'pill',
-                                    color: 'gold',
-                                    layout: 'vertical',
-                                    label: 'paypal',
-                                    
-                                  },
-                          
-                                  createOrder: function(data, actions) {
-                                    return actions.order.create({
-                                      purchase_units: [{"amount":{"currency_code":"MXN","value":270,"breakdown":{"item_total":{"currency_code":"MXN","value":250},"shipping":{"currency_code":"MXN","value":20},"tax_total":{"currency_code":"MXN","value":0}}}}]
-                                    });
-                                  },
-                          
-                                  onApprove: function(data, actions) {
-                                    return actions.order.capture().then(function(orderData) {
-                                      
-                                      // Full available details
-                                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                          
-                                      // Show a success message within this page, e.g.
-                                      const element = document.getElementById('paypal-button-container');
-                                      element.innerHTML = '';
-                                      element.innerHTML = '<h3>Thank you for your payment!</h3>';
-                          
-                                      // Or go to another URL:  actions.redirect('thank_you.html');
-                                      
-                                    });
-                                  },
-                          
-                                  onError: function(err) {
-                                    console.log(err);
-                                  }
-                                }).render('#paypal-button-container');
-                              }
-                              initPayPalButton();
-                            </script>
+
                         </div>
 
 
@@ -184,6 +93,7 @@
                         <div class="producto-informacion">
                             <p class="producto-nombre">Blusa Mujer 01</p>
                             <p class="producto-precio">$150</p>
+                            <a aria-label="Ordenar" href="https://wa.me/5521362728?text=Hola, me interesa la bluda de mujer de 150"> <img alt="Chat on WhatsApp" src="/IMG/Boton-de-Whatsapp.png" width="80"/> </a>
                         </div>
 
 
@@ -368,7 +278,7 @@
             </svg>
         </a>
 
-    <p>Copyright© 2022-Todos los derechos reservados TiendaONLINE</p>
+    <p>Copyright© 2022-Todos los derechos reservados SM Boutique</p>
         </footer>
 
 
@@ -377,104 +287,3 @@
 
 </html>
 
-
-<script>
-  function initPayPalButton() {
-    paypal.Buttons({
-      style: {
-        shape: 'pill',
-        color: 'blue',
-        layout: 'horizontal',
-        label: 'buynow',
-        
-      },
-
-      createOrder: function(data, actions) {
-        return actions.order.create({
-          purchase_units: [{"description":"SUETER NAVIDEÑO","amount":{"currency_code":"MXN","value":5,"breakdown":{"item_total":{"currency_code":"MXN","value":5},"shipping":{"currency_code":"MXN","value":20},"tax_total":{"currency_code":"MXN","value":0}}}}]
-        });
-      },
-
-      onApprove: function(data, actions) {
-        return actions.order.capture().then(function(orderData) {
-          
-          // Full available details
-          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-
-          // Show a success message within this page, e.g.
-          const element = document.getElementById('paypal-button-container');
-          element.innerHTML = '';
-          element.innerHTML = '<h3>Thank you for your payment!</h3>';
-
-          // Or go to another URL:  actions.redirect('thank_you.html');
-          
-        });
-      },
-
-      onError: function(err) {
-        console.log(err);
-      }
-    }).render('#paypal-button-container');
-  }
-  initPayPalButton();
-</script>
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="smart-button-container">
-    <div style="text-align: center;">
-      <div id="paypal-button-container"></div>
-    </div>
-  </div>
-<script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=MXN" data-sdk-integration-source="button-factory"></script>
-<script>
-  function initPayPalButton() {
-    paypal.Buttons({
-      style: {
-        shape: 'rect',
-        color: 'gold',
-        layout: 'vertical',
-        label: 'paypal',
-        
-      },
-
-      createOrder: function(data, actions) {
-        return actions.order.create({
-          purchase_units: [{"description":"Ropa Navideña","amount":{"currency_code":"MXN","value":1}}]
-        });
-      },
-
-      onApprove: function(data, actions) {
-        return actions.order.capture().then(function(orderData) {
-          
-          // Full available details
-          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-
-          // Show a success message within this page, e.g.
-          const element = document.getElementById('paypal-button-container');
-          element.innerHTML = '';
-          element.innerHTML = '<h3>Thank you for your payment!</h3>';
-
-          // Or go to another URL:  actions.redirect('thank_you.html');
-          
-        });
-      },
-
-      onError: function(err) {
-        console.log(err);
-      }
-    }).render('#paypal-button-container');
-  }
-  initPayPalButton();
-</script>
