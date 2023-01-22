@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button and List Example</title>
+</head>
+<body>
+<h1>Button and List Example</h1>
+<button onclick="addToList('Ropa1')">Ropa1</button>
+<button onclick="addToList('Ropa2')">Ropa2</button>
+<button onclick="showHideList()">Show List</button>
+
+<ul id="list"></ul>
+<script>
+  var list = {};
+  var showingList = false;
+  var precioPrenda = 4;
+  function addToList(item) {
+    if (item in list) {
+      list[item].count++;
+    } else {
+      list[item] = {count:1, price:0};
+    }
+    list[item].price = precioPrenda * list[item].count;
+    showList();
+  }
+  function removeFromList(item){
+    if(item in list){
+      if(list[item].count > 1){
+        list[item].count--;
+      }else{
+        delete list[item];
+      }
+      list[item].price = precioPrenda * list[item].count;
+    }
+    showList();
+  }
+function showHideList() {
+var listElement = document.getElementById("list");
+if (showingList) {
+listElement.innerHTML = "";
+showingList = false;
+} else {
+showList();
+showingList = true;
+}
+}
+function showList(){
+var listElement = document.getElementById("list");
+listElement.innerHTML = "";
+for (var item in list) {
+var listItem = document.createElement("li");
+listItem.innerHTML = item + " : Cantidad " + list[item].count + " : Precio " + list[item].price + " <button onclick='removeFromList(\"" + item + "\")'>Remove</button> <button onclick='addToList(\"" + item + "\")'>Add</button>";
+listElement.appendChild(listItem);
+}
+}
+</script>
+
+</body>
+</html>

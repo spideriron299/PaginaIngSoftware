@@ -25,11 +25,13 @@
                 <a href="index.html">Tienda</a>
                 <a href="nosotros.html">Nosotros</a>
                 <a href="Ubicacion.html"> Ubicación</a>
+                <button onclick="showHideList()"><input type="image" src="IMG/carrito.png" style="border: double;" height="80" width="170"/>  </button>
+                <ul id="list"></ul>
             </nav>
 
             <!--ESTE ES EL INICIO DEL CONTENIDO PRINCIPAL-->
             <main class="contenedor">
-                <h1 class="nustros-productos">Nustros Productos</h1>
+                <h1 class="Nuestros-productos">Nustros Productos</h1>
 
                 <!--INICIO PRODUCTOS-->
                 <div class="productos">
@@ -46,6 +48,8 @@
                             <a aria-label="Ordenar" href="https://wa.me/5521362728?text=Hola, me interesa el Suéter Navideño Para Mujer de $250 :)"> 
                                 <img alt="Chat on WhatsApp" src="/IMG/Boton-de-Whatsapp.png" width="80"/> 
                             </a>
+                            <button onclick="addToList('Sueter Navideño Para Mujer')">Añadir al carrito</button>
+
                         </div>
 
                     </div>
@@ -276,6 +280,54 @@
 
     <p>Copyright© 2022-Todos los derechos reservados SM Boutique</p>
         </footer>
+
+
+
+
+        <script>
+            var list = {};
+            var showingList = false;
+            var precioPrenda = 4;
+            function addToList(item) {
+              if (item in list) {
+                list[item].count++;
+              } else {
+                list[item] = {count:1, price:0};
+              }
+              list[item].price = precioPrenda * list[item].count;
+              showList();
+            }
+            function removeFromList(item){
+              if(item in list){
+                if(list[item].count > 1){
+                  list[item].count--;
+                }else{
+                  delete list[item];
+                }
+                list[item].price = precioPrenda * list[item].count;
+              }
+              showList();
+            }
+          function showHideList() {
+          var listElement = document.getElementById("list");
+          if (showingList) {
+          listElement.innerHTML = "";
+          showingList = false;
+          } else {
+          showList();
+          showingList = true;
+          }
+          }
+          function showList(){
+          var listElement = document.getElementById("list");
+          listElement.innerHTML = "";
+          for (var item in list) {
+          var listItem = document.createElement("li");
+          listItem.innerHTML = item + " : Cantidad " + list[item].count + " : Precio " + list[item].price + " <button onclick='removeFromList(\"" + item + "\")'>Remove</button> <button onclick='addToList(\"" + item + "\")'>Add</button>";
+          listElement.appendChild(listItem);
+          }
+          }
+          </script>
 
 </body>
 
