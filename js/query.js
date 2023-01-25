@@ -29,5 +29,14 @@ jQuery.ajax({
 
         $("#precio9").html(data[8][2]);
         $("#disp9").html(data[8][3]);
+
+        $("#precio10").html(data[9][2]);
+        $("#disp10").html(data[9][3]);
+
+        $("#precio11").html(data[10][2]);
+        $("#disp11").html(data[10][3]);
+
+        $("#precio12").html(data[11][2]);
+        $("#disp12").html(data[11][3]);
     }
 }); 
