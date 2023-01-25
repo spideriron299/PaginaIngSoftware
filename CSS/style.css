@@ -230,3 +230,12 @@ nav a:hover {
     justify-content: center;
     align-items: center;
 }
+
+.boton {
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    font-family: 'Arial';
+    padding: 20px 30px;
+    margin: auto; display:block;
+  }
